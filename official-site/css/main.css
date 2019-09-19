@@ -1,0 +1,27 @@
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, SimSun, sans-serif;
+}
+.box {
+  width: 1300px;
+  margin: auto;
+}
+.title-bar {
+  height: 110px;
+  background-color: #fafafa;
+}
+.title-bar .logo-area {
+  height: 100%;
+}
+.title-bar .logo-area img {
+  display: block;
+  float: left;
+  height: 100%;
+  width: auto;
+  margin-right: 40px;
+}
+.title-bar .link-area {
+  height: 100%;
+}
