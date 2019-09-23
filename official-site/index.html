@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>南京鑫晤季信息科技有限公司</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -15,16 +16,16 @@
     <div class="title-bar">
         <div class="box">
             <div class="logo-area">
-                <img src="./img/logo/xwj.png" />
-                <img src="./img/logo/butler.png" />
+                <img src="./img/logo/xwj-logo.svg" class="xwj-logo"/>
+                <img src="./img/logo/butler-logo.svg" class="butler-logo"/>
             </div>
             <div class="link-area">
-                <span class="active">电商市场背景</span>
-                <span>电商新局面</span>
-                <span>实体药妆店</span>
-                <span>店铺合作品牌</span>
-                <span>正在做的事</span>
-                <span>联系我们</span>
+                <span class="active" data-target="ecBg">电商市场背景</span>
+                <span data-target="ecNew">电商新局面</span>
+                <span data-target="shop">实体药妆店</span>
+                <span data-target="brand">店铺合作品牌</span>
+                <span data-target="thing">正在做的事</span>
+                <span data-target="addr">联系我们</span>
             </div>
         </div>
     </div>
@@ -33,7 +34,7 @@
     <!--背景-->
     <div class="gray-bg">
         <div class="box">
-            <div class="jp-sub-title">
+            <div class="jp-sub-title" id="ecBg">
                 中日越境EC市場背景
                 <br />
                 <span class="cn">中日跨境电商市场背景</span>
@@ -76,7 +77,7 @@
     <!--新局面-->
     <div class="gray-bg">
         <div class="box">
-            <div class="jp-sub-title">
+            <div class="jp-sub-title" id="ecNew">
                 中日越境EC新情勢
                 <br />
                 <span class="cn">中日跨境电商新局面</span>
@@ -141,7 +142,7 @@
         </div>
     </div>
     <!--实体店-->
-    <div class="butler-bg">
+    <div class="butler-bg" id="shop">
         <div class="box">
             <div class="shop-info">
                 Butler药妆店2016年开设在东京迪斯尼乐园附近的海浜幕张，几年来服务于逾十万中日顾客，积累了良好的信誉<br/>
@@ -151,10 +152,298 @@
                 美浜区ひび野2-4プレナ幕張2F
 
             </div>
+            <!-- Slider main container -->
+            <div class="swiper-container shop-swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img1"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img2"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img4"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img5"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="shop-img shop-img6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <!--合作品牌-->
+    <div class="box">
+        <div class="jp-sub-title" id="brand">
+            店舗協力ブランド
+            <br /><span class="cn">店铺合作品牌</span>
+        </div>
+        <div class="brand-desc">
+            Butler药妆店是集护肤、彩妆、家居、个护为一体的一站式购物店铺，更设有专柜及独家代理品牌专区，为客户提供多样化选择。
+        </div>
+        <div class="brand-row">
+            <div class="brand-title">护肤彩妆合作品牌：</div>
+            <div class="brand-img">
+                <div class="img-container" style="background-image: url('./img/logo/timg.jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (1).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (2).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (3).jpg')"></div>
+            </div>
+            <div class="brand-more"></div>
+        </div>
+        <div class="brand-row">
+            <div class="brand-title">家居个护合作品牌：</div>
+            <div class="brand-img">
+                <div class="img-container" style="background-image: url('./img/logo/timg (5).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (6).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (7).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (8).jpg')"></div>
+            </div>
+            <div class="brand-more"></div>
+        </div>
+        <div class="brand-row">
+            <div class="brand-title">专柜合作品牌：</div>
+            <div class="brand-img">
+                <div class="img-container" style="background-image: url('./img/logo/timg (9).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (10).jpg')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg.gif')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/timg (11).jpg')"></div>
+            </div>
+            <div class="brand-more"></div>
+        </div>
+        <div class="brand-row">
+            <div class="brand-title">授权代理品牌：</div>
+            <div class="brand-img">
+                <div class="img-container" style="background-image: url('./img/logo/mm.png');background-size: 50%;">
+                </div>
+                <div class="img-container" style="background-image: url('./img/logo/win.png');background-size: 50%;">
+                </div>
+                <div class="img-container" style="background-image: url('./img/logo/sa.png');background-size: 50%;">
+                </div>
+                <div class="img-container" style="background-image: url('./img/logo/qa.png');background-size: 50%;">
+                </div>
+            </div>
+            <div class="brand-more"></div>
+        </div>
+        <div class="brand-row">
+            <div class="brand-title">药品合作厂商：</div>
+            <div class="brand-img">
+                <div class="img-container" style="background-image: url('./img/logo/20190909140934.png')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/20190909140931.png')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/20190909140936.png')"></div>
+                <div class="img-container" style="background-image: url('./img/logo/20190909140917.png')"></div>
+            </div>
+            <div class="brand-more"></div>
+        </div>
+    </div>
+    <!--产品链接-->
+    <div class="gray-bg" id="product">
+        <div class="box product-container">
+            <!-- Slider main container -->
+            <div class="swiper-container product-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="product-wraper">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="product">
+                                        <div class="img-part img-part-1">
+                                            <img src="./img/pro1.png" />
+                                        </div>
+                                        <div class="text-part">
+                                            <p><strong>麻美MAMEW</strong></p>
+                                            <p>水晶胶囊深层滋润精华液 50ml</p>
+                                            <div class="cart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="product">
+                                        <div class="img-part img-part-2">
+                                            <img src="./img/pro2.png" />
+                                        </div>
+                                        <div class="text-part">
+                                            <p><strong>BCL早安面膜</strong></p>
+                                            <p>60秒补水保湿面膜免洗清洁</p>
+                                            <div class="cart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="product">
+                                        <div class="img-part img-part-3">
+                                            <img src="./img/pro3.png" />
+                                        </div>
+                                        <div class="text-part">
+                                            <p><strong>皇后的秘密</strong></p>
+                                            <p>钻石女王面膜保湿补水提亮肤色</p>
+                                            <div class="cart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="product">
+                                        <div class="img-part img-part-4">
+                                            <img src="./img/pro4.png" />
+                                        </div>
+                                        <div class="text-part">
+                                            <p><strong>惠之本铺</strong></p>
+                                            <p>温泉水美容面膜</p>
+                                            <div class="cart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <!--正在做的事-->
+    <div class="box">
+        <div class="jp-sub-title" id="thing">
+            今やっている事
+            <br /><span class="cn">我们正在做的事</span>
+        </div>
+        <div class="thing-container">
+            <div class="row">
+                <div class="col-md-5ths">
+                   <div class="thing-img thing-img1"></div>
+                   <div class="thing-hr"></div>
+                   <div class="thing-text">
+                    以日本的实体药妆店为依托，<br/>通过跨境电商模式为中国消费<br/>者提供日本优质商品
+                   </div>
+                </div>
+                <div class="col-md-5ths">
+                    <div class="thing-img thing-img2"></div>
+                    <div class="thing-hr"></div>
+                    <div class="thing-text">
+                      以日本的实体药妆店为源头，在<br/>中国拓展新型的日货零售店和<br/>体验店
+                    </div>
+                 </div>
+                 <div class="col-md-5ths">
+                    <div class="thing-img thing-img3"></div>
+                    <div class="thing-hr"></div>
+                    <div class="thing-text">
+                        协助日本中小企业的新品牌或<br/>新商品，为他们提供线下商品展<br/>示销售，介绍国内的主播等推广<br/>资源
+                    </div>
+                 </div>
+                 <div class="col-md-5ths">
+                    <div class="thing-img thing-img4"></div>
+                    <div class="thing-hr"></div>
+                    <div class="thing-text">
+                        协助国内的流量主或企业，在日<br/>本以OEM为主的方式，打造新<br/>的商品或品牌
+                    </div>
+                 </div>
+                 <div class="col-md-5ths">
+                    <div class="thing-img thing-img5"></div>
+                    <div class="thing-hr"></div>
+                    <div class="thing-text">
+                        B2B团队长期为中国的电商或<br/>外贸企业提供货源稳定、价格适<br/>当的日本商品供应链
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <!--地址-->
+    <div class="addr-area" id="addr">
+        <div class="box">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./img/addr.png" class="addr-img"/>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>商务合作</h4>
+                            <p>
+                                <span class="addr-icon addr-phone"></span>
+                                15652887655
+                            </p>
+                            <p>
+                                <span class="addr-icon addr-wechat"></span>
+                                xcz-xyz
+                            </p>
+                            <p>
+                                <span class="addr-icon addr-mail"></span>
+                                xwjzk01@163.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="address-title">
+                        Butler药妆店
+                    </div>
+                    <div class="address-detail">
+                        店铺地址：日本国千葉県千葉市美浜区ひび野2-4プレナ幕張2F<br/>
+                        联系方式：+81-432762112
+                    </div>
+                    <div class="address-title">
+                        南京鑫晤季信息科技有限公司
+                    </div>
+                    <div class="address-detail">
+                        公司地址：江苏省南京市江宁区南佑路7号千人计划创业大厦<br/>
+                        联系方式：025-58906001
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-7 qrcode-desc">
+                            扫码进入淘宝海外买手店<br/>
+                            马上开始买买买
+                        </div>
+                        <div class="col-md-5 qrcode">
+                            <img src="./img/taobao.png"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 qrcode-desc">
+                            关注官方公众号<br/>
+                            了解日本最新资讯和有价值内容
+                        </div>
+                        <div class="col-md-5 qrcode">
+                            <img src="./img/gongzhonghao.jpg"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 qrcode-desc">
+                            扫码观看店铺3D实景图<br/>
+                            体验身临其境的购物乐趣
+                        </div>
+                        <div class="col-md-5 qrcode">
+                            <img src="./img/3d.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
