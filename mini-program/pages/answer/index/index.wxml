@@ -1,0 +1,61 @@
+<view class="page">
+  <!-- iamge -->
+  <view class="skin-img">
+    <image src="/static/images/skin-bag.png"></image>
+  </view>
+
+  <view class="m-title">
+    <view class="m-desc-t">
+      点击下方图标测试您的肤质
+    </view>
+    <view class="m-desc-b">
+      完成肌肤测试后我们会为小仙女定制您的专属护肤计划哦!
+    </view>
+  </view>
+  <!-- </view> -->
+  <view class="content-box">
+    <view class="list-item">
+      <view bindtap='showSheet' data-id="{{list[0].id}}">
+        <view class="img-box">
+          <image src="/static/images/skin1.png"></image>
+        </view>
+        <view class="title">{{list[0].t_name}}</view>
+        <view class="title m_name">{{list[0].m_name}}</view>
+      </view>
+    </view>
+
+    <view class="list-item">
+      <view>
+        <picker bindchange="bindPickerChange" data-id="{{list[1].id}}" value="{{index}}" range="{{list[1].answer.name}}">
+          <view class="img-box">
+            <image src="/static/images/skin2.png"></image>
+          </view>
+          <view class="title">{{list[1].t_name}}</view>
+          <view class="title m_name">{{list[1].m_name}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="list-item">
+      <view bindtap="pickerHandler">
+        <view class="img-box">
+          <image src="/static/images/skin3.png"></image>
+        </view>
+        <view class="title">{{list[2].t_name}}</view>
+        <view class="title m_name">{{list[2].m_name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="myskin" bindtap='myFuzhi'>
+    <view class="text">
+      查看我的肤质
+    </view>
+  </view>
+
+
+  <mypicker range="{{sensitive}}" pickerShow="{{pickerShow}}" bindcheck="checkHandler" bindfinish="finishHandler" is-shadow="{{true}}">
+
+  </mypicker>
+
+
+</view>

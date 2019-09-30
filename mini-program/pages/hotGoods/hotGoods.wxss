@@ -1,0 +1,87 @@
+.a-popular .b .item {
+  border-top: 1px solid #d9d9d9;
+  margin: 0 20rpx 4rpx 20rpx;
+  height: 264rpx;
+  width: 710rpx;
+  position: relative;
+}
+.rank{
+  position: absolute;
+  top:50%;
+  left:0rpx;
+}
+.a-popular .b .img {
+  margin:12rpx 12px 0rpx 42rpx;
+  float: left;
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.a-popular .b .right {
+  float: left;
+  height: 264rpx;
+  width: 400rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.a-popular .b .text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 264rpx;
+  width: 400rpx;
+}
+
+.a-popular .b .name {
+ text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  color: #333;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.a-popular .b .desc {
+  width: 456rpx;
+  display: block;
+  color: #999;
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+
+.a-popular .b .price {
+  width: 456rpx;
+  display: block;
+  color: #b4282d;
+  line-height: 50rpx;
+  font-size: 33rpx;
+  margin-top:20px;
+}
+.qianggou {
+  width: 145rpx;
+  height: 55rpx;
+  text-align: center;
+  float: right;
+  line-height: 55rpx;
+  font-size: 29rpx;
+  background-color: #f5901a;
+  color: #fff;
+  margin-left: 60%;
+  position: absolute;
+  bottom:15px;
+  right: 2px;
+}
+.addcart{
+  position: absolute;
+  right:184rpx;
+  top:184rpx;
+  width: 55rpx;
+  height:0rpx;
+}

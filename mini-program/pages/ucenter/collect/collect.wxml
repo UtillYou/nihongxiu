@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="no-cart" wx:if="{{total==0}}">
+    <view class="c">
+      <image src="../../../static/images/collect.png" />
+      <text>您还没有收藏</text>
+    </view>
+  </view>
+  <view class="collect-list" wx:if="{{total > 0}}">
+    <view class="item" bindtap="openGoods" bindtouchstart="touchStart" bindtouchend="touchEnd" wx:for="{{collectList}}" wx:key="{{item.product_id}}" data-index="{{index}}">
+      <image class="img" src="{{item.imgUrl}}"></image>
+      <view class="info">
+        <view class="name">{{item.name}}</view>
+        <view class="subtitle">{{item.status==2?'已下架':''}}</view>
+        <view class="del-collect">
+          <view class="price">￥{{item.price}}</view>
+          <image catchtap="deleteCollect" class="del" data-product_id="{{item.product_id}}" src="/static/images/del-address.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

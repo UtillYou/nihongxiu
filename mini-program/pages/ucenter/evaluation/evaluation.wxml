@@ -1,0 +1,57 @@
+<!--服务评价-->
+<view class="service" wx:for="{{productsList}}" wx:for-index="topindex" wx:for-item="item" wx:key="{{item.product_id}}" >
+  <form >
+  <view class="a-section a-popular">
+    <view class="b">
+      <view class="item">
+        <navigator url="/pages/goods/goods?id={{item.product_id}}">
+          <image class="img" src="{{item.imgUrl}}" background-size="cover"></image>
+          <view class="right">
+            <view class="text">
+              <text class="name">{{item.name}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    <!--评分-->
+    <view class='score'>
+      <view class='left'>
+        评分
+      </view>
+      <view class='right'>
+        <view bindtap="starTap" data-productid="{{item.product_id}}"  data-topindex="{{topindex}}" data-index="{{index}}" class="star" wx:for="{{[0,1,2,3,4]}}"  wx:for-item="i" wx:key="index"  > 
+          <image src="/static/images/wjx.png" wx:if="{{item.star>=i}}"/>
+          <image src="/static/images/rwjx.png" wx:else/>
+        </view>
+        <text class='rtxt'>{{item.star==null?'0':(item.star+1)}}.0分</text>
+        <view/>
+      </view>
+    </view>
+
+    <view class='picture'>
+      <view class='left'>
+        图片
+      </view>
+      <view class='right'>
+        <view class="parcel" wx:for="{{item.pics}}" wx:for-item="imgitem" wx:key="{{index}}">
+          <image src="{{imgitem.imgsrc}}"  class="According"  mode="aspectFill" data-product-id="{{item.product_id}}" data-imgid="{{imgitem.id}}" bindtap="previewImg"></image>
+          <image src="/static/images/delete.png" class='deleteimg' data-product-id="{{item.product_id}}" data-imgid="{{imgitem.id}}" catchtap="deleteImg" data-index="{{index}}"></image>
+        </view>
+        <image src='/static/images/add.png' class='add' bindtap='choose' data-product-id="{{item.product_id}}"></image>
+      </view>
+    </view>
+  </view>
+  <!--textarea-->
+  <view class="conts">
+    <textarea name="evaluation" data-product-id="{{item.product_id}}" class="areas" placeholder='更多评价请写在这里（最多100字）' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+    </textarea>
+  </view>
+  <!--提交评价-->
+  <!-- wx:if="{{item.is_reputation==0}}"-->
+  <button class='btn' form-type="submit" data-product-id="{{item.product_id}}" bindtap="formSubmit" wx:if="{{item.is_reputation!==1}}">提交评价</button>
+  <button class='btn1' wx:if="{{item.is_reputation==1}}">已经评价</button>
+  </form>
+</view>
+

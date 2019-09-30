@@ -1,0 +1,108 @@
+page {
+  background: #5a51a2;
+}
+
+.a-section {
+  width: 750rpx;
+  height: auto;
+  background: #5a51a2;
+}
+
+.a-section .h {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 130rpx;
+}
+
+.a-section .h .txt {
+  padding-right: 30rpx;
+  /* background: url("http://ac-3yr0g9cz.clouddn.com/2cdba05369e10f934e54.png") right 4rpx no-repeat; */
+  background-size: 16.656rpx 27rpx;
+  display: inline-block;
+  height: 36rpx;
+  font-size: 33rpx;
+  line-height: 36rpx;
+}
+
+.a-new .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 22rpx 31rpx 45rpx 31rpx;
+}
+
+.a-new .b .item {
+  float: left;
+  width: 302rpx;
+  margin-top: 22rpx;
+  margin-left: 21rpx;
+  margin-right: 21rpx;
+  background: #fff;
+}
+
+.a-new .b .item-b {
+  margin-left: 42rpx;
+}
+
+.a-new .b .img {
+  width: 302rpx;
+  height: 302rpx;
+  border-radius: 10%;
+}
+
+.a-new .b .name {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  font-size:26rpx;
+  line-height:40rpx;
+  width: 302rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+  text-align:center;
+}
+
+.a-new .b .price {
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #b4282d;
+  margin-bottom: 22rpx;
+}
+
+.qianggou {
+  width: 200rpx;
+  height: 50rpx;
+  text-align: center;
+  float: left;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  background-color: red;
+  border-radius: 10%;
+  color: #fff;
+  margin-left: 18%;
+  margin-bottom: 10rpx;
+}
+
+.cart {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 40rpx;
+}
+
+.topimg {
+  width: 100%;
+}
+
+.special_price {
+  font-size: 12px;
+  color: #ccc;
+  text-decoration: line-through;
+}

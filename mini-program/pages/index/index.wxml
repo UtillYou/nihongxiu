@@ -1,0 +1,156 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="search">
+    <navigator url="/pages/search/search" class="input" hover-class="none">
+      <image class="icon"></image>
+      <text class="txt">商品搜索</text>
+    </navigator>
+  </view>
+  <swiper class="banner" previous-margin="10rpx" next-margin="10rpx" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.index}}">
+      <image src="{{item.image_url}}" background-size="cover" data-type="{{item.type}}" data-id="{{item.jump_id}}" bindtap="clickBanner"></image>
+    </swiper-item>
+  </swiper>
+
+
+  <!-- 扫码入群 -->
+  <!-- <view class="topic">
+    <view class="saoma" bindtap='goToSaoMao'>
+      <image src="/static/images/saoma.png"></image>
+    </view>
+  </view> -->
+
+
+  <view class="home-content" style='margin-top: 46rpx;'>
+    <view class="content">
+      <view class="left">
+        <!--物流说明-->
+        <navigator url="/pages/essay/essay?url_key=logistics-rule" hover-class="none">
+          <image src="/static/images/wuliushuoming.png"  mode="widthFix"></image>
+        </navigator>
+      </view>
+      <!--人气榜单,福袋-->
+      <view class="mid">
+        <view class="top">
+          <navigator url="/pages/hotGoods/hotGoods" hover-class="none">
+            <image src="/static/images/renqibangdan.png" mode="widthFix"></image>
+          </navigator>
+        </view>
+        <view class="bottom">
+           <navigator url="/pages/onecategory/onecategory?id=5d243063945343478c6e3b42&cname=福袋" hover-class="none">
+               <image src="/static/images/fudai.png"  mode="widthFix"></image>
+           </navigator>
+        </view>
+      </view>
+      <view class="right">
+          <navigator url="/pages/essay/essay?url_key=shop" hover-class="none">
+            <image src="/static/images/dianpudaohang.png"  mode="widthFix"></image>
+          </navigator>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 进行中的秒杀 -->
+  <view class="a-section a-new" wx:if="{{limitByGoods.length>0}}">
+    <view style="border-radius:5px;height:auto;width:100%;background: #eaf0ff;">
+      <view class="zan-cell zan-cell--access" bindtap='gotolimitbuy'>
+        <view class="" style="font-weight:bold;width:80px;letter-spacing:2px;">限时秒杀</view>
+        <view class="zan-cell__bd hbMpBox_r_time">
+          <view class="syTime_time">{{countDownList.hou}}</view>
+          <view>:</view>
+          <view class="syTime_time">{{countDownList.min}}</view>
+          <view>:</view>
+          <view class="syTime_time">{{countDownList.sec}}</view>
+        </view>
+        <view class="zan-cell__ft smallsize">更多秒杀</view>
+      </view>
+      <view class="bb">
+        <scroll-view scroll-x="true" style=" white-space: nowrap; display:flex">
+          <view class="k-goods-box" wx:for-items="{{limitByGoods}}" wx:key="{{index}}"  data-id="{{item.id}}">
+            <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
+              <view class="k-img-box">
+                <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
+              </view>
+              <view class="btn10" wx:if="{{!spiking}}">即将开始</view>
+              <view class="goods-title">{{item.name}}</view>
+              <view style='display:flex;'>
+                <view class="goods-price">¥ {{item.set_special_price==''?item.price:item.set_special_price}}</view>
+                <view class="goods-price" wx:if="{{item.special_price && (item.special_price < item.price)}}" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view>
+                
+              </view>
+            </navigator>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+
+ <!--顶级 菜单 和 前9个商品 展示 start -->
+
+<view class="productshow-list" wx:if="{{productshow.length > 0}}">
+    <view class="one-list" wx:for-items="{{productshow}}" wx:key="{{index}}"  data-id="{{item.id}}">
+      
+       <navigator url="/pages/category/category?id={{item.id}}" hover-class="none">
+          <image src="{{item.image}}" class="top-menu-image" mode="widthFix" lazy-load="true" ></image>
+       </navigator>
+          <swiper class="menu_product"  circular="true" indicator-dots="true" autoplay="true"  interval="5000" duration="1500"   >
+              <swiper-item wx:for="{{item.productlist}}" wx:for-item="products" wx:key="{{index}}"> 
+                <view class="product-box" wx:for="{{products}}" wx:for-item="product" wx:key="{{product.product_id}}">
+                  <navigator url="../goods/goods?id={{product.product_id}}" hover-class="none">
+                    <view class="img-box">
+                      <image src="{{product.image}}" class="image"  lazy-load="true" />
+                    </view>
+                    <view class="goods-title">{{product.name}}</view>
+                    <view >
+                      <view class="goods-price">¥ {{product.special_price>0?product.special_price:product.price}}</view>
+                    </view>
+                  </navigator>
+                </view>  
+              </swiper-item> 
+          </swiper>
+
+    </view>
+</view>
+
+ <!--顶级 菜单 和 前9个商品 展示 end -->
+
+
+
+  <view class="a-section " wx:if="{{hotGoods.length > 0}}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">热销推荐</view>
+    </view>
+
+    <view class="goods-container">
+      <view class="goods-box" wx:for-items="{{hotGoods}}" wx:key="{{index}}"  data-id="{{item.id}}">
+        <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
+          <view class="img-box">
+            <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
+          </view>
+          <view class="goods-title">{{item.name}}</view>
+          <view style='display:flex;'>
+            <view class="goods-price">¥ {{item.special_price>0?item.special_price:item.price}}</view>
+            <view class="goods-price" wx:if="{{item.special_price && (item.special_price < item.price)}}" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  </view>
+  <block wx:if="{{dialogData.length>0}}">
+    <view wx:for="{{dialogData}}">
+      <view class="modalDlg">
+        <view class='close_mask' bindtap="close_mask">X</view>
+        <text class="dialog-t">{{item.title}}</text>
+        <view>
+          <image class="dialog-i" src="{{item.image}}" mode='aspectFill' lazy-load='true'></image>
+        </view>
+        <text class="dialog-c" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</text>
+        <button class='dialog-btn' catchtap='dialog_click' data-type="{{item.type}}" data-jump-id="{{item.jump_id}}">{{item.btn_content}}</button>
+      </view>
+      <view class="mask"></view>
+    </view>
+  </block>

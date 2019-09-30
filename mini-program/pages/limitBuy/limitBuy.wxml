@@ -1,0 +1,80 @@
+<view class="trump">
+  <view class="PicBg">
+    <image src="{{backImage}}" />
+  </view>
+  <view class="content1">
+    <swiper next-margin="50px" autoplay="true">
+      <block wx:for="{{trumpArr}}" wx:key="product_id">
+        <swiper-item>
+          <view class="item1">
+            <image class="img1" src="{{item.image}}" background-size="cover"></image>
+            <view class="right1">
+              <view class="text1">
+                <text class="name1">{{item.name}}</text>
+                <text class="desc1">{{item.meta_title}}</text>
+                <text class="price1">特惠价 ￥{{item.set_special_price}}</text>
+                <text class="qianggou1" bindtap="buyitnow" data-product-id="{{item.product_id}}">立即购买</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<!-- 导航栏 -->
+<view  wx:if="{{switchtab.length > 0}}">
+  <scroll-view class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+    <block wx:for="{{switchtab}}" wx:key="index">
+      <view class="tab-item {{currentTab == index ? 'active' : ''}}" data-id="{{item.id}}" data-stime="{{item.stime}}" data-etime="{{item.etime}}" data-current="{{index}}" bindtap='switchNav'>
+        <text>{{item.title}}
+        </text>
+        <text style="font-size:25rpx;">{{item.desc}}</text>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class="explain-box">
+    <view wx:if="{{isEnd == 0}}">
+      <text >{{spiking==true?'距结束还有':'距开始还有'}} {{countDownList.hou}}:{{countDownList.min}}:{{countDownList.sec}}</text>
+    </view>
+    <view wx:else>
+       <text >已结束</text>
+    </view>
+  </view>
+
+</view>
+<view class="a-section a-popular" wx:if="{{limitGoods.length > 0}}">
+  <view class="b">
+    <view class="item" wx:for="{{limitGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.product_id}}">
+      <navigator url="/pages/goods/goods?id={{item.product_id}}">
+        <image class="img" src="{{item.image}}" background-size="cover"></image>
+      </navigator>
+        <view class="right">
+          <view class="text">
+           <navigator url="/pages/goods/goods?id={{item.product_id}}">
+            <text class="name">{{item.name}}</text>
+            <text class="bref">{{item.meta_title}}</text>
+            <!-- <text class="desc">原价:<text style="text-decoration:line-through;">{{item.price.value}}</text></text> -->
+            <text class="price">￥{{item.set_special_price}}<text style="text-decoration:line-through;font-size:26rpx;padding-left:20rpx;">原价:￥{{item.price}}</text></text>
+             </navigator>
+            <!-- <progress percent="{{item.percent}}" style="width:100px;height:10px;" border-radius="10px" color="red" stroke-width="8" /> -->
+            <text style="font-weight:bold;">{{item.seckill_desc}}</text>
+            <image src="/static/images/list_shopping_cart.png"  class="addcart"  mode="widthFix"   bindtap='addToCart' data-id="{{item.product_id}}" ></image>
+            <navigator url="/pages/goods/goods?id={{item.product_id}}">
+            <text class="qianggou">立即抢购</text>
+            </navigator>
+          </view>
+        </view>
+  
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{limitGoods.length==0}}">
+  <view class="c">
+    <image src="http://xwjxcximg.dongluting.com/assets/no_goods.png" />
+    <text>暂无秒杀</text>
+  </view>
+</view>

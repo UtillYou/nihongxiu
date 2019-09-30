@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="address-list" wx:if="{{ addressList.length > 0 }}">
+        <view class="item" wx:for="{{addressList}}" wx:key="{{item.id}}" bindtap="selectAddress" data-address-id="{{item.address_id}}">
+            <view class="l">
+                <view class="name">{{item.first_name}}</view>
+                <view class="default" wx:if="{{item.is_default==1}}">默认</view>
+            </view>
+            <view class="c">
+                <view class="mobile">{{item.telephone}}</view>
+                <view class="address">{{item.country + item.state+ item.city+item.district+ item.street1}}</view>
+            </view>
+            <view class="r">
+                <image catchtap="addressAddOrUpdate" data-address-id="{{item.address_id}}" class="del" src="http://xwjxcximg.dongluting.com/assets/edit.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="empty-view" wx:if="{{ addressList.length <= 0 }}">
+      <image class="icon" src="http://xwjxcximg.dongluting.com/assets/no_address.png"></image>
+      <text class="text">收货地址在哪里</text>
+    </view>
+    <view class="add-address" bindtap="addressAddOrUpdate" data-address-id="0">新建</view>
+</view>

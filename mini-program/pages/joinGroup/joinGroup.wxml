@@ -1,0 +1,21 @@
+<view class="top">
+  <text>怎样入群?</text>
+</view>
+<view class="desc">
+  <text>群内惊喜福利定时上线</text>
+</view>
+
+<view class="mid">
+  <image src="{{picurl}}"></image>
+</view>
+<view class="content">
+   <text>手机截屏用微信扫描二维码</text>
+</view>
+
+
+  <swiper class="bottom"  display-multiple-items="4" >
+    <swiper-item ><image src="/static/images/step1.png" mode="widthFix"></image><text>(1)截屏保存到手机相册</text></swiper-item>
+        <swiper-item ><image src="/static/images/step2.png"  mode="widthFix"></image><text>(2)打开微信app</text></swiper-item>
+        <swiper-item ><image src="/static/images/step3.png"   mode="widthFix"></image><text>(3)点击微信右上角"+"扫一扫</text></swiper-item>
+        <swiper-item ><image src="/static/images/step4.png"  mode="widthFix"></image><text>(4)在扫码页右上角选择相册,选择截屏图片</text></swiper-item>
+  </swiper>

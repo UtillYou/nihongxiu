@@ -1,0 +1,8 @@
+.store {
+  width:750rpx;
+  height:auto;
+}
+.store image{
+  width:750rpx;
+  height:2200px;
+}

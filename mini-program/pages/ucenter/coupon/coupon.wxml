@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="no-cart" wx:if="{{total == 0}}">
+    <view class="c">
+      <image src="../../../static/images/collect.png" />
+      <text>暂无优惠券</text>
+    </view>
+  </view>
+  <view class="coupon-list"  wx:if="{{total > 0 }}"  >
+    <view class="item" wx:for="{{couponList}}" wx:key="{{item.coupon_id}}" bindtap="selectCoupon" data-ischecked ="{{item.checked}}" data-coupon-code="{{item.coupon_code}}">
+      <view class="content">
+        <view class="left">
+          <view class="name">券码:{{item.coupon_code}}</view>
+          <view class="time">失效时间:{{item.expiration_date}}</view>
+        </view>
+        <view class="right">
+          <button class="go" bindtap='gohome'>去使用</button>
+        </view>
+      </view>
+      <view class="condition">
+        <text class="txt" wx:if="{{item.type==1}}" >享受折扣:{{item.discount}}折 </text>
+        <text class="txt" wx:if="{{item.type==2}}" >可抵扣:{{item.discount}}元 </text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,290 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+.service {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background: #fff;
+}
+.score {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #ccc;
+}
+.star {
+  float: left;
+  width: 54rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.star image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+.score .left {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  float: left;
+}
+.score .right {
+  width: 610rpx;
+  font-size: 30rpx;
+  float: left;
+  color: #888;
+}
+
+.score .right .rtxt {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 15rpx;
+  color: #c00;
+  font-weight: bold;
+}
+.labelColor {
+  color: #c00;
+  border: 1px solid #c00 !important;
+}
+.content {
+  width: 100%;
+  overflow: hidden;
+  border-bottom:1px solid #ccc;
+  padding:0 0 26rpx 0;
+  box-sizing: border-box;
+} 
+.content .left {
+  width: 100rpx;
+  font-size: 30rpx;
+  float: left;
+  padding-top: 20rpx;
+}
+.content .right {
+  width: 610rpx;
+  font-size: 24rpx;
+  float: left;
+  color: #888;
+}
+.content .right text {
+  font-size: 24rpx;
+  padding: 13rpx 24rpx;
+  float: left;
+  border: 1px solid #888;
+  border-radius: 10rpx;
+  margin-right: 34rpx;
+  margin-top: 20rpx;
+}
+.picture {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.picture .left {
+  width: 100rpx;
+  font-size: 30rpx;
+  float: left;
+  padding-top: 20rpx;
+}
+.picture .right {
+  width: 610rpx;
+  font-size: 24rpx;
+  float: left;
+  color: #888;
+  box-sizing: border-box;
+  padding-top:36rpx; 
+}
+.picture .right .add {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 10rpx;
+}
+.According{
+  width:120rpx;
+  height:120rpx;
+  float:left;
+  margin-right:10rpx;
+  margin-bottom: 10rpx;
+}
+.parcel{
+ width:120rpx;
+  height:120rpx;
+  float:left;
+  margin-right:10rpx;
+   margin-bottom: 10rpx;
+  position: relative;
+}
+.deleteimg{
+  width:30rpx;
+  height:30rpx;
+  position: absolute;
+  right:0;
+  top:0;
+  z-index: 2;
+}
+.conts{
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+textarea {
+  width: 687rpx;
+}
+
+.title{
+  height:115rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;   
+  position: relative; 
+}
+.areas{
+  height:315rpx;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;   
+  position: relative; 
+  border-bottom: 1px #ccc solid;
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  position: absolute;
+  left: 0%;
+  bottom: 0rpx;
+  color: #c00;
+}
+.hint{
+   font-size: 28rpx;
+   position: absolute;
+   top: 120rpx;
+   left: 30rpx;
+   color: #FF6600;
+}
+.btn {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #c00;
+  margin-top: 10rpx;
+  /* position: fixed;
+  left:75rpx;
+  bottom: 37rpx; */
+} 
+.btn1 {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #ccc;
+  margin-top: 10rpx;
+  /* position: fixed;
+  left:75rpx;
+  bottom: 37rpx; */
+} 
+button:after {
+  border: 0;
+}
+
+
+.a-section {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.a-section .h {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 130rpx;
+}
+
+.a-section .h .txt {
+  padding-right: 30rpx;
+  background-size: 16.656rpx 27rpx;
+  display: inline-block;
+  height: 36rpx;
+  font-size: 33rpx;
+  line-height: 36rpx;
+}
+
+
+
+
+.a-popular {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+}
+
+.a-popular .b .item {
+  border-top: 1px solid #d9d9d9;
+  margin: 0 20rpx 4rpx 20rpx;
+  height: 264rpx;
+  width: 710rpx;
+}
+
+.a-popular .b .img {
+  margin-top: 12rpx;
+  margin-right: 12rpx;
+  float: left;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius:10%;
+}
+
+.a-popular .b .right {
+  float: left;
+  height: 264rpx;
+  width: 456rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.a-popular .b .text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 264rpx;
+  width: 456rpx;
+}
+
+.a-popular .b .name {
+  width: 456rpx;
+  display: block;
+  color: #333;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.a-popular .b .desc {
+  width: 456rpx;
+  display: block;
+  color: #999;
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+
+.a-popular .b .price {
+  width: 456rpx;
+  display: block;
+  color: #b4282d;
+  line-height: 50rpx;
+  font-size: 33rpx;
+}

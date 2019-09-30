@@ -1,0 +1,79 @@
+<view class="container">
+    <view class="order-info">
+        <view class="item-a">下单时间：{{orderInfo.created_at}}</view>
+        <view class="item-a">订单编号：{{orderInfo.increment_id}}</view>
+        <!-- <navigator url="/pages/logistics/lLogistics?increment_id={{orderInfo.increment_id}}" hover-class='none'> -->
+        <navigator url="/pages/ucenter/express/express?id={{orderInfo.increment_id}}" hover-class='none'>
+           <view class="item-b" wx:if="{{orderInfo.tracking_number}}" >快递单号：{{orderInfo.tracking_number}} <text class="look_logistics">查看物流</text></view>
+        </navigator>
+        <view class="item-c">
+            <view class="l">实付：<text class="cost">￥{{orderInfo.base_grand_total}}</text></view>
+            <view class="r">
+                <!-- <view  data-order-id='{{orderInfo.order_id}}'  wx:if="{{orderInfo.order_status=='payment_pending'}}" class="btn active" bindtap="cancelOrder">取消订单</view> -->
+                <!-- <view  data-order-id='{{orderInfo.order_id}}'   wx:if="{{orderInfo.order_status=='payment_pending'}}" class="btn active" bindtap="payOrder">去付款</view> -->
+            </view>
+        </view>
+    </view>
+
+    <view class="order-goods">
+        <view class="h">
+            <view class="label">商品信息</view>
+            <view class="status"></view>
+        </view>
+        <view class="goods">
+            <view class="item" wx:for="{{orderGoods}}" wx:key="{{item.product_id}}">
+                <view class="img">
+                    <image src="{{item.imgUrl}}"></image>
+                </view>
+                <view class="info">
+                    <view class="t">
+                        <text class="name">{{item.name}}</text>
+                        <text class="number">x{{item.qty}}</text>
+                    </view>
+                    <view class="attr">{{item.goods_specifition_name_value}}</view>
+                    <view class="price">￥{{item.row_total}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="order-bottom">
+        <view class="address">
+            <view class="t">
+                <text class="name">{{orderInfo.customer_firstname}}</text>
+                <text class="mobile">{{orderInfo.customer_telephone}}</text>
+            </view>
+            <view class="b">{{orderInfo.customer_address_country + orderInfo.customer_address_state+orderInfo.customer_address_city+orderInfo.district+orderInfo.customer_address_street1}}</view>
+        </view>
+        <view class="total">
+            <view class="t">
+                <text class="label">商品合计：</text>
+                <text class="txt">+￥{{orderInfo.base_subtotal}}</text>
+            </view>
+            <view class="t">
+                <text class="label">税费：</text>
+                <text class="txt">+￥{{orderInfo.tax_total}}</text>
+            </view>
+            <view class="t" >
+                <text class="label">跨境电商税：</text>
+                <text class="txt">+￥{{orderInfo.cross_border_tax}}</text>
+            </view>
+            <view class="t">
+                <text class="label">运费：</text>
+                <text class="txt">+￥{{orderInfo.shipping_total}}</text>
+            </view>
+            <view class="t">
+                <text class="label">优惠：</text>
+                <text class="txt">-￥{{orderInfo.base_subtotal_with_discount}}</text>
+            </view>
+             <view class="t">
+                <text class="label">积分：</text>
+                <text class="txt">-￥{{orderInfo.score_to_cash}}</text>
+            </view>
+        </view>
+        <!-- <view class="pay-fee">
+            <text class="label">实付：</text>
+            <text class="txt">￥{{orderInfo.base_grand_total}}</text>
+        </view> -->
+    </view>
+</view>

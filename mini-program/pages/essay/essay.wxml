@@ -1,0 +1,15 @@
+<!--pages/essay/essay.wxml-->
+<view class="main"  wx:if="{{returnCode != 200}}">
+   <!-- <view class="article ">
+       {{itemList.content}}
+   </view> -->
+   <text class="notice">对不起，文章不见了/(ㄒoㄒ)/~~</text>
+   
+</view>
+<view wx:else>
+  <view class="content">
+    <video id="{{url_key}}" class="mp4" autoplay="true" loop="true"  src="http://xwjxcximg.dongluting.com/default/shop.mp4"  wx:if="{{url_key == 'shop'}}"></video>
+    <rich-text nodes="{{itemList.content}}" bindtap="tap"></rich-text>
+  </view>
+   
+</view>

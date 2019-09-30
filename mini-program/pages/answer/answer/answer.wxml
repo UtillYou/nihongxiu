@@ -1,0 +1,74 @@
+<view class="page">
+  <!-- 顶部 -->
+  <view class="header-model2 css-shadow-bottom">
+    <text class="submit" bindtap='handleSubmitOpen' wx:if="{{showSubmit==true}}">提交</text>
+  </view>
+  <!-- 进度条 -->
+  <view class="progress i-progress i-progress-active">
+    <view class="i-progress-outer">
+      <view class="i-progress-inner">
+        <view class="i-progress-bg" style="width:{{currentIndex*100/total}}%;height: 2px"></view>
+      </view>
+    </view>
+  </view>
+
+  <view style="padding-bottom:44px;">
+    <view class="question-list">
+      <view class="question-list-title">
+        <view class="i-tag i-tag-blue-border i-tag-disable">单选</view>
+        <text class="question-title">{{currentQuestion.name}}</text>
+      </view>
+    </view>
+    <view class="i-panel">
+      <view class="i-panel-content" wx:for="{{currentQuestion.answer}}">
+        <view class="i-cell-group"></view>
+        <view class="i-radio">
+          <view class="radio-index--i-radio-cell i-cell i-cell-last">
+            <view class="i-cell-icon"></view>
+            <view class="i-cell-bd"></view>
+            <view class="i-cell-ft"></view>
+          </view>
+          <label>
+            <radio-group class="radio-group" bindchange="choseOption" data-qid="{{currentQuestion.id}}" >
+            <radio class="i-radio-radio i-radio-radio-left"    value="{{item.id}}" checked='{{item.isChoice}}'></radio>
+            <view class="i-radio-title">{{item.value}}</view>
+            </radio-group>
+          </label>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="css-shadow tab-bar ">
+    <view class="prev" wx:if="{{currentIndex > 1}}" catchtap="changeQuestion" data-type='0'>
+      <view style="height:100%;">
+        上一题
+        <view class="i-icon i-icon-return" style="font-size: 14px; ">
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="i-row">
+        <view class="i-col i-col-span-23"></view>
+        <view>
+          <button class="footer-defbtn button-hover">
+            <view class='i-icon i-icon-task' style="font-size: 25px; color:#3D971C"></view>
+            <view class="footer-btn-text">
+              <text>{{currentIndex}}/{{total}}</text>
+            </view>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="next" wx:if="{{currentIndex < total}}" catchtap="changeQuestion"  data-type="1" >
+      <view style="height:100%;"  >
+        下一题
+        <view class="i-icon i-icon-enter" style="font-size: 14px; ">
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

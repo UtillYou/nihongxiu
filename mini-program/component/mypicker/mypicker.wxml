@@ -1,0 +1,19 @@
+<view>
+    <view class='com-picker-view {{pickerShow}}'>
+        <view class='com-picker-title'>
+            <view class='com-picker-cancel' bindtap='pickerCancel'>取消</view>
+            <view class='com-picker-result'><slot></slot></view>
+            <view class='com-picker-finish' bindtap='pickerFinish'>完成</view>
+        </view>
+        <view class="check" bindtap='pickerCheck'>进入测试（推荐）</view>
+        <view class="notcie">如果非常确定自己肤质可以跳过测试，直接选择以下肤质类型</view>
+        <picker-view indicator-style="height: 40px;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{range}}"  data-index="{{index}}" style="line-height: 40px">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+
+    <view class='com-picker-shadow {{pickerShow}}' bindtap='pickerHandler' wx:if="{{isShadow}}"></view> 
+
+</view>

@@ -1,0 +1,163 @@
+<view class="container">
+    <view class="address-box">
+        <view class="address-item" bindtap="selectAddress"  wx:if="{{checkedAddress.address_id!==0 && checkedAddress.address_id!=''}}">
+            <view class="l">
+                <text class="name">{{checkedAddress.first_name}}</text>
+                <text class="default" wx:if="{{checkedAddress.is_default === 1}}">默认</text>
+            </view>
+            <view class="m">
+                <text class="mobile">{{checkedAddress.telephone}}</text>
+                <text class="address">{{checkedAddress.address}}</text>
+            </view>
+            <view class="r">
+                <image src="/static/images/address_right.png"></image>
+            </view>
+        </view>
+        <view class="address-item address-empty" bindtap="addAddress" wx:if="{{checkedAddress.address_id ==0 || checkedAddress.address_id==''}}">
+            <view class="m">
+               还没有收货地址，去添加
+            </view>
+            <view class="r">
+                <image src="/static/images/address_right.png"></image>
+            </view>
+        </view>
+    </view>
+    
+    <view class="goods-items">
+        <view class="item" wx:for="{{checkedGoodsList}}" wx:key="{{item.id}}">
+            <view class="img">
+                <image src="{{item.imgUrl}}"></image>
+            </view>
+            <view class="info">
+                <view class="t">
+                    <text class="name">{{item.name}}</text>
+                    <text class="number">x{{item.qty}}</text>
+                </view>
+                <view class="m">{{item.goods_specifition_name_value}}</view>
+                <view class="b">￥{{item.product_price}}<text class='tax'>税费:￥{{item.tax}}</text></view>
+            </view>
+        </view>
+    </view>
+   
+   <view class="sys-notice" >
+       <text>温馨提示:
+       1、如果你总商品税费超过了50元,就需缴纳商品销售总金额9.1%的跨境电商税
+       2、购物满{{free_price}}元免运费,不满加30元运费
+       </text>
+   </view>
+
+    <view class="coupon-box" bindtap="selectCoupon">
+        <view class="coupon-item">
+            <view class="l" >
+                <text class="name">请选择优惠券</text>
+                <text class="txt">{{couponCount}}张</text>
+            </view>
+            <view class="r">
+                <image src="/static/images/address_right.png"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="order-box">
+        <view class="order-item">
+            <view class="l">
+                <text class="name">商品合计</text>
+            </view>
+            <view class="r">
+                <text class="txt">￥{{goodsTotalPrice}}</text>
+            </view>
+        </view>
+        <view class="order-item">
+            <view class="l">
+                <text class="name">运费</text>
+            </view>
+            <view class="r">
+               <view wx:if="{{freightPrice > 0}}">
+                <text class="txt">￥{{freightPrice}}</text>
+              </view>
+              <view wx:else>
+                  <text class="txt">免运费</text>
+              </view>
+            </view>
+        </view>
+        <view class="order-item">
+            <view class="l">
+                <text class="name">税费</text>
+            </view>
+            <view class="r">
+              <view wx:if="{{taxTotal > 0}}">
+                  <text class="txt">￥{{taxTotal}}</text>
+              </view>
+              <view wx:else>
+                  <text class="txt">免税费</text>
+              </view>
+            </view>
+        </view>
+
+        <view class="order-item">
+            <view class="l">
+                <text class="name">跨境电商税</text>
+            </view>
+            <view class="r">
+                <text class="txt">￥{{crossBorderTax}}</text>
+            </view>
+        </view>
+
+        <view class="order-item ">
+            <view class="l">
+                <text class="name">优惠券</text>
+            </view>
+            <view class="r">
+                <text class="txt">-￥{{couponPrice}}</text>
+            </view>
+        </view>
+        
+        <view class="order-item " wx:if="{{score_arr.total_score>0}}">
+            <view class="l">
+                <text class="name">您有{{score_arr.total_score}}积分</text>
+            </view>
+            <view class="s">
+                <input bindinput="bindKeyInput" placeholder="输入要抵扣积分"  />
+            </view>
+        </view>
+        <view class="order-item ">
+            <view class="l">
+                <text class="name">积分</text>
+            </view>
+            <view class="r">
+                <text class="txt">-￥{{score_discount}}</text>
+            </view>
+        </view>
+        <view class="order-item">
+            <view class="l">
+                <text class="name">支付方式</text>
+            </view>
+            <view class="r">
+                <text class="txt">{{payment_method_label}}</text>
+            </view>
+        </view>
+        <view class="order-item">
+            <view class="l">
+                <text class="name">运送方式</text>
+            </view>
+            <view class="r">
+                <text class="txt">{{current_shipping_label}}</text>
+            </view>
+        </view>
+        <!-- <view class="order-item no-border">
+            <view class="l">
+                <text class="name">优惠券</text>
+            </view>
+            <view class="r">
+                <text class="txt">-￥{{couponPrice}}</text>
+            </view>
+        </view> -->
+    </view>
+
+
+
+    <view class="order-total">
+        <view class="l">实付：￥{{showOrderTotalPrice}}</view>
+        <view class="r" bindtap="submitOrder">去付款</view>
+    </view>
+</view>

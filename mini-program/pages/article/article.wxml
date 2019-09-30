@@ -1,0 +1,28 @@
+<view class="main">
+  <view class="article " wx:for="{{itemList}}" wx:key="{{index}}">
+    <view><image src="{{item.image}}" class="bigPic"></image></view>
+    <view class="title">{{item.title}}</view>
+    <view class="content-wrap">
+        {{item.content}}
+    </view>
+    <view class="a-section a-popular">
+      <view class="b">
+        <view class="item" wx:for="{{item.products}}" wx:for-item="item1">
+          <navigator url="/pages/goods/goods?id={{item1._id}}">
+            <image class="img" src="{{item1.image}}" background-size="cover"></image>
+            <view class="right">
+              <view class="text">
+                <text class="name">{{item1.name}}</text>
+                <text class="bref"></text>
+                <!-- <text class="desc">原价:</text> -->
+                <text class="price">￥{{item1.special_price?item1.special_price.value:item1.price.value}}</text>
+                <text class="qianggou">立即购买</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view> 

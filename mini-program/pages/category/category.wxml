@@ -1,0 +1,34 @@
+<view >
+  <!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navList}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" data-id="{{navItem._id}}"  bindtap="switchNav">{{navItem.name}}</view>
+    </block>
+  </scroll-view>
+
+  <!-- 页面内容 -->
+  <view class="cate-item" wx:if="{{goodsList.length>0}}">
+    <!-- <view class="h">
+            <text class="name">{{currentCategory.name}}</text>
+            <text class="desc">{{currentCategory.front_name}}这是默认说明</text>
+        <!-- </view>  -->
+    <view class="b">
+      <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" wx:for="{{goodsList}}" url="/pages/goods/goods?id={{iitem.product_id}}" wx:for-item="iitem" wx:for-index="iindex"  wx:key="goodsList">
+        <image class="img" src="{{iitem.image}}" background-size="cover"></image>
+        <text class="name">{{iitem.name}}</text>
+        <text class="price">￥{{iitem.special_price?iitem.special_price.value:iitem.price.value}}</text>
+      </navigator>
+    </view>
+  </view>
+
+</view>
+
+  <view wx:if="{{goodsList.length==0}}">
+    <view class="c">
+      <image src="http://xwjxcximg.dongluting.com/assets/no_goods.png" />
+      <text>暂无商品</text>
+    </view>
+  </view>
+

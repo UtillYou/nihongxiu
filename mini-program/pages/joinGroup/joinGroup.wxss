@@ -1,0 +1,45 @@
+.top {
+  font-weight: bold;
+  text-align: center;
+}
+.top text{
+ font-size:30px;
+ letter-spacing:3px;
+}
+.desc{
+  text-align: center;
+}
+.desc text{
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 32rpx;
+  background-color: black;
+  color: #fff;
+  padding: 6px 20px;
+  letter-spacing:3px;
+}
+.mid {
+  text-align: center;
+  margin-top: 30px;
+}
+.mid image{
+  width:150px;
+  height:150px;
+}
+.content{
+  text-align: center;
+}
+.bottom {
+  margin:30px 10px;
+  text-align: center;
+  height: 300px;
+  width:auto;
+  background-color: rgba(163, 19, 19, 0.075)
+}
+.bottom image{
+  width:100%;
+  margin-left:1px;
+}
+.bottom text{
+  font-size: 22rpx;
+}

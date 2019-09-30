@@ -1,0 +1,55 @@
+<import src ="../../template/login.wxml"/>
+<view class="container">
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{item.curType == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}" data-curtype="{{item.curType}}">
+      {{item.name}}
+      <view class="{{tabClass[index]}}"></view>
+    </view>
+  </view>
+  <view class="no-order" hidden="{{orderList.length==0?false:true}}">
+    <image src="/static/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无订单</view>
+  </view>
+
+  <view class="order" wx:for="{{orderList}}" wx:key="{{item.order_id}}">
+    <view class="h">
+      <view class="l">订单编号：{{item.increment_id}}</view>
+      <view class="r">{{item.order_status_text}}</view>
+    </view>
+    <view class="h">
+      <view class="l">创建时间：{{item.created_at}}</view>
+    </view>
+    <view class="goods" wx:for="{{item.products}}" wx:key="{{gitem._id}}" wx:for-item="gitem" data-order-id="{{item.order_id}}"  bindtap='orderDetail'>
+      <view class="img">
+        <image src="{{gitem.imgUrl}}"></image>
+      </view>
+      <view class="info">
+        <text class="name">{{gitem.name}}</text>
+        <text class="number">￥{{gitem.price}} </text>
+      </view>
+      <view class="status">x{{gitem.qty}}</view>
+    </view>
+    <view class="b">
+      <view class="l">实付：￥{{item.base_grand_total}}</view>
+      <view class="r">
+        <button class="btn" bindtap='completedorder' data-order-id="{{item.order_id}}" wx:if="{{item.order_status=='dispatched'}}">确认收货</button>
+      </view>
+      <view class="r">
+        <button class="btn" data-order-id="{{item.order_id}}" catchtap="payOrder" wx:if="{{item.order_status=='payment_pending'}}">去付款 </button>
+      </view>
+      <view class="r">
+        <button class="btn" bindtap='buyorder' data-order-id="{{item.order_id}}" wx:if="{{item.order_status=='completed' || item.order_status=='payment_canceled'}}">重新购买</button>
+      </view>
+      <view class="r">
+        <button class="btn" data-order-id="{{item.order_id}}" wx:if="{{item.order_status=='completed' && item.is_reputation==0}}" bindtap='reviewOrder'>订单评价</button>
+      </view>
+      <view class="r">
+        <button class="btn" data-increment-id="{{item.increment_id}}" wx:if="{{item.order_status=='completed' || item.order_status=='dispatched'}}" bindtap='queryLogistics'>查看物流</button>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<template is="login_tpl" data="{{showLoginDialog:showLoginDialog}}"/>

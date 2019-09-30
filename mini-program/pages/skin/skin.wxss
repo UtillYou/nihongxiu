@@ -1,0 +1,277 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-top: 10px;
+  z-index: 99;
+}
+
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  height: 80rpx;
+}
+
+.nav-item.active {
+  color: red;
+  height:80rpx;
+  border-bottom: 2px red solid;
+  
+}
+
+.tab-box {
+  padding-top: 10rpx;
+  padding-left:10px;
+  height: auto;
+  font-size:26rpx;
+  box-sizing: border-box;
+}
+
+.tab-content {
+  overflow-y: scroll;
+}
+
+.select_box {
+  background: #fff;
+  width: 80%;
+  margin: 5rpx auto;
+  position: relative;
+}
+
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60rpx;
+  border: 1px solid #efefef;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.select_text {
+  font-size: 24rpx;
+  flex: 1;
+}
+
+.select_img {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.select_img_rotate {
+  transform: rotate(180deg);
+}
+
+.option_box {
+  position: absolute;
+  top: 70rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  border-top: 0;
+  background: #f7f7f7;
+  transition: height 0.3s;
+  z-index: 999;
+}
+
+.option {
+  display: block;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+
+.top {
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.title {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.middle {
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.content {
+  padding: 10px;
+}
+
+.bottom {
+  margin-top: 10px;
+}
+
+.product-item {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.product-item image {
+  width: 80px;
+  height: 80px;
+  border: 1px green solid;
+}
+
+.product-item .name {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  width: 80px;
+  font-size: 26rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  height: auto;
+  line-height: 37rpx;
+}
+
+.tag {
+  padding: 0 10rpx;
+  border-radius: 3px;
+  height: 37rpx;
+  width: auto;
+  background-color: #fff;
+  color: blue;
+  border: 1px solid blue;
+  font-size: 25rpx;
+}
+
+.text {
+  width: 235rpx;
+  color: #fff;
+  height: 72rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 72rpx;
+  border-radius: 30rpx;
+  background-color: #f5901a;
+  margin: 0 auto;
+}
+
+.text1 {
+  font-size: 26rpx;
+  width: 110rpx;
+  height: 110rpx;
+  background-color: red;
+  text-align: center;
+  line-height:110rpx;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  box-shadow:0 0 1px #000 inset;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bto {
+  display: flex;
+}
+
+.products{
+  height: auto;
+}
+.a-section {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.a-section .h {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 130rpx;
+}
+
+.a-section .h .txt {
+  padding-right: 30rpx;
+  /* background: url("http://ac-3yr0g9cz.clouddn.com/2cdba05369e10f934e54.png") right 4rpx no-repeat; */
+  background-size: 16.656rpx 27rpx;
+  display: inline-block;
+  height: 36rpx;
+  font-size: 33rpx;
+  line-height: 36rpx;
+}
+.a-new .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0 31rpx 45rpx 31rpx;
+}
+
+.a-new .b .item {
+  float: left;
+  width: 302rpx;
+  margin-top: 10rpx;
+  margin-left: 21rpx;
+  margin-right: 21rpx;
+}
+
+.a-new .b .item-b {
+  margin-left: 42rpx;
+}
+
+.a-new .b .img {
+  width: 302rpx;
+  height: 302rpx;
+}
+
+.a-new .b .name {
+  text-align: center;
+  display: block;
+  width: 302rpx;
+  height: 38rpx;
+  margin-bottom: 14rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.a-new .b .price {
+  display: block;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #b4282d;
+}
+.description{
+  text-indent:20px;
+  word-break:break-all;
+  height: auto;
+}

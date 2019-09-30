@@ -1,0 +1,5 @@
+/* pages/essay/essay.wxss */
+.main{padding: 20rpx;font-size:28rpx}
+.notice{padding: 10px;font-size:28rpx}
+.content{padding: 20rpx;}
+.mp4{width: 100%;}

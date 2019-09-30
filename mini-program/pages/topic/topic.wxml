@@ -1,0 +1,19 @@
+<view class="container"  >
+  <view>
+    <image class="topimg" src="{{topImage}}" mode="widthFix"></image>
+  </view>
+  <view class="a-section a-new" wx:if="{{goodsList.length > 0}}">
+    <view class="b">
+      <view class="item" wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.product_id}}">
+        <navigator url="../goods/goods?id={{item.product_id}}">
+          <image class="img" src="{{item.image}}" background-size="cover"></image>
+          <text class="name">{{item.name}}</text>
+          <text class="price">￥{{item.price.value}}<text class="special_price" >￥{{item.special_price.value}}
+          </text> </text>
+          <text class="qianggou">立即抢购</text>
+        </navigator>
+        <!-- <image class="cart" src="/static/images/cart.png"></image> -->
+      </view>
+    </view>
+  </view>
+</view>

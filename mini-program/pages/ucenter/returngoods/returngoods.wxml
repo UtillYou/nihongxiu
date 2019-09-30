@@ -1,0 +1,55 @@
+<import src ="../../template/login.wxml"/>
+<view class="container">
+  <view class="notice_view">
+      <text   class="notice">温馨提示：跨境商品暂不支持7天无理由退货</text>
+  </view>
+  <!-- <view class="picker">
+    <view class="fb-type">
+      <input placeholder="请输入订单号" bindinput="bindinputOrder"  value="{{increment_id}}" auto-focus/>
+    </view>
+  </view>
+  <view class="fb-body">
+    <textarea class="content" placeholder="请填写破损/质量问题" maxlength='{{max}}' bindinput="inputs" />
+    <view class="text-count">{{num}}/500</view>
+  </view> -->
+   <picker bindchange="bindIncrementIdChange" value="{{incrementIndex}}" range="{{incrementArray}}">
+    <view class="picker">
+      <view class="fb-type">
+        <view class="type-label">{{incrementArray[incrementIndex]}}</view>
+        <image class="type-icon" src="/static/images/feedback-down.png"></image>
+
+      </view>
+    </view>
+  </picker>
+   <picker bindchange="bindQuestionChange" value="{{questionIndex}}" range="{{question}}">
+    <view class="picker">
+      <view class="fb-type">
+        <view class="type-label">{{question[questionIndex]}}</view>
+        <image class="type-icon" src="/static/images/feedback-down.png"></image>
+
+      </view>
+    </view>
+  </picker>
+
+  <view class="fb-mobile">
+    <view class="label">上传图片</view>
+    <view class="mobile-box">
+      <view class='picture'>
+        <view class='right'>
+          <view class="parcel" wx:for="{{pics}}" wx:for-item="imgitem" wx:key="{{index}}">
+            <image src="{{imgitem.imgsrc}}" class="According" mode="aspectFill" data-imgid="{{imgitem.id}}" bindtap="previewImg"></image>
+            <image src="/static/images/delete.png" class='deleteimg'  data-imgid="{{imgitem.id}}" catchtap="deleteImg" data-index="{{index}}"></image>
+          </view>
+          <image src='/static/images/add.png' class='add' bindtap='choose' data-product-id="{{item.product_id}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+  <button class="fb-btn" bindtap="submit">提交</button>
+</view>
+
+
+
+<template is="login_tpl" data="{{showLoginDialog:showLoginDialog}}"/>
