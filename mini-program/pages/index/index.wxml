@@ -21,12 +21,12 @@
   </view> -->
 
 
-  <view class="home-content" style='margin-top: 46rpx;'>
+  <view class="home-content">
     <view class="content">
       <view class="left">
         <!--物流说明-->
         <navigator url="/pages/essay/essay?url_key=logistics-rule" hover-class="none">
-          <image src="/static/images/wuliushuoming.png"  mode="widthFix"></image>
+          <image src="/static/images/wuliushuoming.png" mode="widthFix"></image>
         </navigator>
       </view>
       <!--人气榜单,福袋-->
@@ -37,17 +37,57 @@
           </navigator>
         </view>
         <view class="bottom">
-           <navigator url="/pages/onecategory/onecategory?id=5d243063945343478c6e3b42&cname=福袋" hover-class="none">
-               <image src="/static/images/fudai.png"  mode="widthFix"></image>
-           </navigator>
+          <navigator url="/pages/onecategory/onecategory?id=5d243063945343478c6e3b42&cname=福袋" hover-class="none">
+            <image src="/static/images/fudai.png" mode="widthFix"></image>
+          </navigator>
         </view>
       </view>
       <view class="right">
-          <navigator url="/pages/essay/essay?url_key=shop" hover-class="none">
-            <image src="/static/images/dianpudaohang.png"  mode="widthFix"></image>
-          </navigator>
+        <navigator url="/pages/essay/essay?url_key=shop" hover-class="none">
+          <image src="/static/images/dianpudaohang.png" mode="widthFix"></image>
+        </navigator>
       </view>
 
+    </view>
+  </view>
+
+  <!--导航菜单-->
+  <view class="nav-container">
+    <view>
+      <navigator url="/pages/category/category?id=5d24040094534345af5a7442">
+        <image src="/static/images/nav-1.png" mode="aspectFit"></image>
+        <text>良 品</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/category/category?id=5d24042d94534346be26e7a2">
+        <image src="/static/images/nav-2.png" mode="aspectFit"></image>
+        <text>彩 妆</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/category/category?id=5d24044a9453434758214132">
+        <image src="/static/images/nav-3.png" mode="aspectFit"></image>
+        <text>护 肤</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/category/category?id=5d24040e94534345f15d1052">
+        <image src="/static/images/nav-4.png" mode="aspectFit"></image>
+        <text>家 居</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/category/category?id=5d24046a94534348244d3822">
+        <image src="/static/images/nav-5.png" mode="aspectFit"></image>
+        <text>母 婴</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator url="/pages/category/category?id=5d24045e9453434efc40c5b2">
+        <image src="/static/images/nav-6.png" mode="aspectFit"></image>
+        <text>保 健</text>
+      </navigator>
     </view>
   </view>
 
@@ -67,7 +107,7 @@
       </view>
       <view class="bb">
         <scroll-view scroll-x="true" style=" white-space: nowrap; display:flex">
-          <view class="k-goods-box" wx:for-items="{{limitByGoods}}" wx:key="{{index}}"  data-id="{{item.id}}">
+          <view class="k-goods-box" wx:for-items="{{limitByGoods}}" wx:key="{{index}}" data-id="{{item.id}}">
             <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
               <view class="k-img-box">
                 <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
@@ -77,7 +117,7 @@
               <view style='display:flex;'>
                 <view class="goods-price">¥ {{item.set_special_price==''?item.price:item.set_special_price}}</view>
                 <view class="goods-price" wx:if="{{item.special_price && (item.special_price < item.price)}}" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view>
-                
+
               </view>
             </navigator>
           </view>
@@ -87,34 +127,34 @@
   </view>
 
 
- <!--顶级 菜单 和 前9个商品 展示 start -->
+  <!--顶级 菜单 和 前9个商品 展示 start -->
 
-<view class="productshow-list" wx:if="{{productshow.length > 0}}">
-    <view class="one-list" wx:for-items="{{productshow}}" wx:key="{{index}}"  data-id="{{item.id}}">
-      
-       <navigator url="/pages/category/category?id={{item.id}}" hover-class="none">
-          <image src="{{item.image}}" class="top-menu-image" mode="widthFix" lazy-load="true" ></image>
-       </navigator>
-          <swiper class="menu_product"  circular="true" indicator-dots="true" autoplay="true"  interval="5000" duration="1500"   >
-              <swiper-item wx:for="{{item.productlist}}" wx:for-item="products" wx:key="{{index}}"> 
-                <view class="product-box" wx:for="{{products}}" wx:for-item="product" wx:key="{{product.product_id}}">
-                  <navigator url="../goods/goods?id={{product.product_id}}" hover-class="none">
-                    <view class="img-box">
-                      <image src="{{product.image}}" class="image"  lazy-load="true" />
-                    </view>
-                    <view class="goods-title">{{product.name}}</view>
-                    <view >
-                      <view class="goods-price">¥ {{product.special_price>0?product.special_price:product.price}}</view>
-                    </view>
-                  </navigator>
-                </view>  
-              </swiper-item> 
-          </swiper>
+  <view class="productshow-list" wx:if="{{productshow.length > 0}}">
+    <view class="one-list" wx:for-items="{{productshow}}" wx:key="{{index}}" data-id="{{item.id}}">
+
+      <navigator url="/pages/category/category?id={{item.id}}" hover-class="none">
+        <image src="{{item.image}}" class="top-menu-image" mode="widthFix" lazy-load="true"></image>
+      </navigator>
+      <swiper class="menu_product" circular="true" indicator-dots="true" autoplay="true" interval="5000" duration="1500">
+        <swiper-item wx:for="{{item.productlist}}" wx:for-item="products" wx:key="{{index}}">
+          <view class="product-box" wx:for="{{products}}" wx:for-item="product" wx:key="{{product.product_id}}">
+            <navigator url="../goods/goods?id={{product.product_id}}" hover-class="none">
+              <view class="img-box">
+                <image src="{{product.image}}" class="image" lazy-load="true" />
+              </view>
+              <view class="goods-title">{{product.name}}</view>
+              <view>
+                <view class="goods-price">¥ {{product.special_price>0?product.special_price:product.price}}</view>
+              </view>
+            </navigator>
+          </view>
+        </swiper-item>
+      </swiper>
 
     </view>
-</view>
+  </view>
 
- <!--顶级 菜单 和 前9个商品 展示 end -->
+  <!--顶级 菜单 和 前9个商品 展示 end -->
 
 
 
@@ -124,7 +164,7 @@
     </view>
 
     <view class="goods-container">
-      <view class="goods-box" wx:for-items="{{hotGoods}}" wx:key="{{index}}"  data-id="{{item.id}}">
+      <view class="goods-box" wx:for-items="{{hotGoods}}" wx:key="{{index}}" data-id="{{item.id}}">
         <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
           <view class="img-box">
             <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
@@ -139,18 +179,18 @@
     </view>
   </view>
 
-  </view>
-  <block wx:if="{{dialogData.length>0}}">
-    <view wx:for="{{dialogData}}">
-      <view class="modalDlg">
-        <view class='close_mask' bindtap="close_mask">X</view>
-        <text class="dialog-t">{{item.title}}</text>
-        <view>
-          <image class="dialog-i" src="{{item.image}}" mode='aspectFill' lazy-load='true'></image>
-        </view>
-        <text class="dialog-c" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</text>
-        <button class='dialog-btn' catchtap='dialog_click' data-type="{{item.type}}" data-jump-id="{{item.jump_id}}">{{item.btn_content}}</button>
+</view>
+<block wx:if="{{dialogData.length>0}}">
+  <view wx:for="{{dialogData}}">
+    <view class="modalDlg">
+      <view class='close_mask' bindtap="close_mask">X</view>
+      <text class="dialog-t">{{item.title}}</text>
+      <view>
+        <image class="dialog-i" src="{{item.image}}" mode='aspectFill' lazy-load='true'></image>
       </view>
-      <view class="mask"></view>
+      <text class="dialog-c" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</text>
+      <button class='dialog-btn' catchtap='dialog_click' data-type="{{item.type}}" data-jump-id="{{item.jump_id}}">{{item.btn_content}}</button>
     </view>
-  </block>
+    <view class="mask"></view>
+  </view>
+</block>
