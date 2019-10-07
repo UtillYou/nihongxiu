@@ -8,15 +8,18 @@
   background: #fff;
   display: flex;
   align-items: center;
+  margin-bottom: 15rpx;
 }
 
 .search .input {
   width: 690rpx;
   height: 56rpx;
-  background: #ededed;
+  background: #f5f5f5;
+  color:#000;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50rpx;
 }
 
 .search .icon {
@@ -565,7 +568,7 @@
 .content {
   width: auto;
   height: auto;
-  background-color: #ffe7e1;
+  background-color: #fff1cd;
   padding: 5px;
   border-radius: 5px;
   overflow: hidden;

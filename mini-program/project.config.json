@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx68dbe33ab91718dc",
-	"projectname": "nihongxiu-2b",
+	"projectname": "nihongxiu-miniprogram",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
