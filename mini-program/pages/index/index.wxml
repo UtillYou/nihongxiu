@@ -135,16 +135,20 @@
       <navigator url="/pages/category/category?id={{item.id}}" hover-class="none">
         <image src="{{item.image}}" class="top-menu-image" mode="widthFix" lazy-load="true"></image>
       </navigator>
-      <swiper class="menu_product" circular="true" indicator-dots="true" autoplay="true" interval="5000" duration="1500">
+      <swiper class="menu_product" circular="true" indicator-dots="true"  interval="5000" duration="1500" indicator-color="#e6e6e6" indicator-active-color="#b3b3b3" autoplay="true">
         <swiper-item wx:for="{{item.productlist}}" wx:for-item="products" wx:key="{{index}}">
           <view class="product-box" wx:for="{{products}}" wx:for-item="product" wx:key="{{product.product_id}}">
             <navigator url="../goods/goods?id={{product.product_id}}" hover-class="none">
               <view class="img-box">
                 <image src="{{product.image}}" class="image" lazy-load="true" />
+                <view class="fav-icon">
+                  <image src="/static/images/index-fav.png" mode="aspectFit"></image>
+                </view>
               </view>
               <view class="goods-title">{{product.name}}</view>
-              <view>
+              <view class="price-box">
                 <view class="goods-price">¥ {{product.special_price>0?product.special_price:product.price}}</view>
+                <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
               </view>
             </navigator>
           </view>
@@ -159,20 +163,27 @@
 
 
   <view class="a-section " wx:if="{{hotGoods.length > 0}}">
-    <view class="weui-loadmore weui-loadmore_line">
-      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">热销推荐</view>
-    </view>
+    <view class="hot-title">
+        <view class="hot-rect"></view>
+        <text class="hot-eg">HOT</text>
+        <text class="hot-name">大家都在买</text>
+        <text class="hot-desc">极力推荐</text>
+      </view>
 
-    <view class="goods-container">
-      <view class="goods-box" wx:for-items="{{hotGoods}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <view class="one-list">
+      <view class="product-box" wx:for-items="{{hotGoods}}" wx:key="{{index}}" data-id="{{item.id}}">
         <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
           <view class="img-box">
             <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
+            <view class="fav-icon">
+                  <image src="/static/images/index-fav.png" mode="aspectFit"></image>
+                </view>
           </view>
           <view class="goods-title">{{item.name}}</view>
-          <view style='display:flex;'>
+          <view class="price-box">
             <view class="goods-price">¥ {{item.special_price>0?item.special_price:item.price}}</view>
             <view class="goods-price" wx:if="{{item.special_price && (item.special_price < item.price)}}" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view>
+            <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
           </view>
         </navigator>
       </view>
