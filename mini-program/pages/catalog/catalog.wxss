@@ -17,16 +17,18 @@ page {
   background: #fff;
   display: flex;
   align-items: center;
+  margin-bottom: 15rpx;
 }
 
 .search .input {
   width: 690rpx;
   height: 56rpx;
-  background: #ededed;
-  border-radius: 8rpx;
+  background: #f5f5f5;
+  color:#000;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50rpx;
 }
 
 .search .icon {
@@ -63,14 +65,14 @@ page {
   width: 162rpx;
   height: 90rpx;
   color: #333;
-  font-size: 28rpx;
+  font-size: 32rpx;
   border-left: 6rpx solid #fff;
 }
 
 .catalog .nav .item.active {
-  color: #ab2b2b;
+  color: #ff4900;
   font-size: 36rpx;
-  border-left: 6rpx solid #ab2b2b;
+  border-left: 6rpx solid #ff4900;
 }
 
 .catalog .cate {

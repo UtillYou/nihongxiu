@@ -2,11 +2,11 @@
   <!-- tab导航栏 -->
   <!-- scroll-left属性可以控制滚动条位置 -->
   <!-- scroll-with-animation滚动添加动画过渡 -->
-  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+  <view class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
     <block wx:for="{{navList}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
       <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" data-id="{{navItem._id}}"  bindtap="switchNav">{{navItem.name}}</view>
     </block>
-  </scroll-view>
+  </view>
 
   <!-- 页面内容 -->
   <view class="cate-item" wx:if="{{goodsList.length>0}}">
@@ -16,9 +16,17 @@
         <!-- </view>  -->
     <view class="b">
       <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" wx:for="{{goodsList}}" url="/pages/goods/goods?id={{iitem.product_id}}" wx:for-item="iitem" wx:for-index="iindex"  wx:key="goodsList">
-        <image class="img" src="{{iitem.image}}" background-size="cover"></image>
+        <view class="img-box">
+          <image class="img" src="{{iitem.image}}" background-size="cover"></image>
+          <view class="fav-icon">
+                  <image src="/static/images/index-fav.png" mode="aspectFit"></image>
+                </view>
+        </view>
         <text class="name">{{iitem.name}}</text>
+        <view class="price-box">
         <text class="price">￥{{iitem.special_price?iitem.special_price.value:iitem.price.value}}</text>
+        <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
+        </view>
       </navigator>
     </view>
   </view>
