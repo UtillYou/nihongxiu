@@ -38,7 +38,7 @@ Page({
   getIndexData: function() {
     let that = this;
     util.request(api.IndexUrl).then(function(res) {
-      // console.log(res.data);
+      console.log(res.data);
       if (res.code === 200) {
         that.setData({
           hotGoods: res.data.hotGoodsList,

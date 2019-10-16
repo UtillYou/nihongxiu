@@ -6,9 +6,11 @@
       <text class="txt">商品搜索</text>
     </navigator>
   </view>
-  <swiper class="banner" previous-margin="10rpx" next-margin="10rpx" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <swiper class="banner"  circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="{{item.index}}">
+      <view class="swiper-img">
       <image src="{{item.image_url}}" background-size="cover" data-type="{{item.type}}" data-id="{{item.jump_id}}" bindtap="clickBanner"></image>
+      </view>
     </swiper-item>
   </swiper>
 
@@ -141,14 +143,14 @@
             <navigator url="../goods/goods?id={{product.product_id}}" hover-class="none">
               <view class="img-box">
                 <image src="{{product.image}}" class="image" lazy-load="true" />
-                <view class="fav-icon">
+                <!-- <view class="fav-icon">
                   <image src="/static/images/index-fav.png" mode="aspectFit"></image>
-                </view>
+                </view> -->
               </view>
               <view class="goods-title">{{product.name}}</view>
               <view class="price-box">
                 <view class="goods-price">¥ {{product.special_price>0?product.special_price:product.price}}</view>
-                <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
+                <!-- <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image> -->
               </view>
             </navigator>
           </view>
@@ -175,15 +177,15 @@
         <navigator url="../goods/goods?id={{item.product_id}}" hover-class="none">
           <view class="img-box">
             <image src="{{item.image}}" class="image" mode="aspectFill" lazy-load="true" />
-            <view class="fav-icon">
+            <!-- <view class="fav-icon">
                   <image src="/static/images/index-fav.png" mode="aspectFit"></image>
-                </view>
+                </view> -->
           </view>
           <view class="goods-title">{{item.name}}</view>
           <view class="price-box">
             <view class="goods-price">¥ {{item.special_price>0?item.special_price:item.price}}</view>
             <view class="goods-price" wx:if="{{item.special_price && (item.special_price < item.price)}}" style='color:#aaa;text-decoration:line-through'>¥ {{item.price}}</view>
-            <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
+            <!-- <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image> -->
           </view>
         </navigator>
       </view>

@@ -133,7 +133,7 @@
   padding: 0 35rpx;
   font-size: 25rpx;
   line-height: 1.4;
-  color: #CC0000;
+  color: #ea0303;
   margin: 24rpx  0rpx  10rpx 0rpx;
 }
 .section-t  .goods-stitle{
@@ -616,7 +616,7 @@
   float: left;
   height: 100rpx;
   width: 20%;
-  border: 1px solid #f4f4f4;
+  /* border: 1px solid #f4f4f4; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,22 +670,46 @@
   line-height: 96rpx;
   flex: 1;
   text-align: center;
-  color: #333;
-  border-top: 1px solid #f4f4f4;
-  border-bottom: 1px solid #f4f4f4;
+  color: #fff;
+  /* border-top: 1px solid #f4f4f4; */
+  /* border-bottom: 1px solid #f4f4f4; */
   width: 50%;
+  padding-top: 10rpx;
+  /* background-color: #ff4819; */
 }
-
+.add-cart{
+background: #ffb913;
+color: #fff;
+width:90%;
+height:80rpx;
+border-radius: 15rpx;
+margin: auto;
+text-align: center;
+line-height: 80rpx;
+}
+.buy-now{
+background-color: #ff4819;
+color: #fff;
+width:90%;
+height:80rpx;
+border-radius: 15rpx;
+margin: auto;
+text-align: center;
+line-height: 80rpx;
+}
 .bottom-btn .r {
   width: 50%;
-  border: 1px solid #b4282d;
-  background: #b4282d;
+  /* border: 1px solid #ffb913; */
+  /* border-top: 1px solid #f4f4f4;
+border-bottom: 1px solid #f4f4f4; */
+
+  /* background: #ffb913; */
   float: right;
   height: 100rpx;
   line-height: 96rpx;
   flex: 1;
   text-align: center;
-  color: #fff;
+  padding-top: 10rpx;
 }
 @import "../../lib/wxParse/wxParse.wxss";
 
