@@ -1,14 +1,21 @@
 <view class="a-section a-popular" wx:if="{{goodsList.length > 0}}">
   <view class="b">
     <view class="item" wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.product_id}}">
-      <text class="rank">{{index+1}}</text>
+    <block  wx:if="{{index < 4}}">
+    <view class="rank">
+    <text class="rank{{index}}"> TOP </text>
+<text class="rank{{index}}">{{index+1}}</text>
+    </view>
+    </block>
+      
       <image class="img" src="{{item.image}}" background-size="cover"></image>
       <view class="right">
         <view class="text">
           <text class="name">{{item.name}}</text>
           <text class="bref"></text>
+          <text class="baoyou">满388包邮</text>
           <text class="price">￥{{item.special_price==''?item.price:item.special_price}}</text>
-          <image src="/static/images/list_shopping_cart.png"  class="addcart"  mode="widthFix"   bindtap='addToCart' data-id="{{item.product_id}}" ></image>
+          <image src="/static/images/cart-gray.png"  class="addcart"  mode="aspectFit"   bindtap='addToCart' data-id="{{item.product_id}}" ></image>
           <navigator url="/pages/goods/goods?id={{item.product_id}}" class='buynow'>
             <text class="qianggou">立即购买</text>
           </navigator>

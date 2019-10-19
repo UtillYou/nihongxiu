@@ -52,7 +52,11 @@
       <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" url="/pages/goods/goods?id={{iitem.product_id}}" wx:for="{{goodsList}}" wx:for-item="iitem" wx:for-index="iindex" wx:key="{{iitem.product_id}}">
         <image class="img" src="{{iitem.image}}" background-size="cover"></image>
         <text class="name">{{iitem.name}}</text>
+        <view class="baoyou-price">
+        <text class="baoyou">满388包邮</text>
         <text class="price">￥{{iitem.price}}</text>
+        </view>
+        
       </navigator>
     </view>
   </view>

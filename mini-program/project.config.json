@@ -52,6 +52,19 @@
 					"pathName": "pages/goods/goods",
 					"query": "id=5d1deb85945343046129386a",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "热销榜单",
+					"pathName": "pages/hotGoods/hotGoods",
+					"query": "id=5d1deb85945343046129386a",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "秒杀",
+					"pathName": "pages/limitBuy/limitBuy",
+					"scene": null
 				}
 			]
 		}

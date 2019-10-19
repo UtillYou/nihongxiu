@@ -1,14 +1,37 @@
 .a-popular .b .item {
-  border-top: 1px solid #d9d9d9;
-  margin: 0 20rpx 4rpx 20rpx;
+  /* border-top: 1px solid #d9d9d9; */
+  margin: 25rpx 20rpx 25rpx 20rpx;
   height: 264rpx;
   width: 710rpx;
   position: relative;
+  box-shadow: 0px 0px 3px 2px rgba(220,220,220,0.4);
+  border-radius: 10rpx;
 }
 .rank{
   position: absolute;
   top:50%;
   left:0rpx;
+  text-align: center;
+  padding-left: 10rpx;
+
+}
+.rank text{
+  font-size: 28rpx;
+}
+.rank text{
+  display: block;
+}
+.rank0{
+  color: #d70000;
+}
+.rank1{
+  color: #d79800;
+}
+.rank2{
+  color: #718901;
+}
+.rank3{
+  color: #4e4e4e;
 }
 .a-popular .b .img {
   margin:12rpx 12px 0rpx 42rpx;
@@ -23,6 +46,7 @@
   width: 400rpx;
   display: flex;
   flex-flow: row nowrap;
+  position: relative;
 }
 
 .a-popular .b .text {
@@ -31,7 +55,7 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  height: 264rpx;
+  height: 141rpx;
   width: 400rpx;
 }
 
@@ -59,10 +83,12 @@
 .a-popular .b .price {
   width: 456rpx;
   display: block;
-  color: #b4282d;
+  color: #ff693f;
   line-height: 50rpx;
   font-size: 33rpx;
-  margin-top:20px;
+  position: absolute;
+  left:0rpx;
+  bottom:32rpx;
 }
 .qianggou {
   width: 145rpx;
@@ -71,17 +97,32 @@
   float: right;
   line-height: 55rpx;
   font-size: 29rpx;
-  background-color: #f5901a;
+  background-color: #de2f2f;
   color: #fff;
   margin-left: 60%;
   position: absolute;
   bottom:15px;
-  right: 2px;
+  right: 5px;
+  border-radius: 25rpx;
 }
 .addcart{
   position: absolute;
   right:184rpx;
   top:184rpx;
-  width: 55rpx;
-  height:0rpx;
+  width: 40rpx;
+  height:40rpx;
+}
+.baoyou{
+  border:1px solid #ffbf00;
+  border-radius: 3px;
+  color:#ffbf00;
+  display: inline-block;
+  padding:1rpx 2rpx;
+  margin-top: 10rpx;
+  width:135rpx;
+  font-size: 24rpx;
+  position: absolute;
+  left:2rpx;
+  bottom: 90rpx;
+  text-align: center;
 }

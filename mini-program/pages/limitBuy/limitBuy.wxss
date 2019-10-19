@@ -1,3 +1,16 @@
+page{
+  background-color: #fafafa;
+}
+
+.top-box{
+  width:90%;
+  margin: auto;
+  box-shadow: 0px 0px 3px 2px rgba(220,220,220,0.4);
+  border-radius: 20rpx;
+  margin-top: -36rpx;
+  background-color: white;
+}
+
 .contain {
   width: 100%;
   height: 100%;
@@ -12,26 +25,27 @@
   white-space: nowrap;
   box-sizing: border-box;
   overflow: hidden;
-  border-bottom: 2px solid #ffefdf;
+  background-color: #ce1b1b;
 }
 
 .tab-item {
   display: inline-block;
   width: 20%;
   text-align: center;
-  line-height: 48rpx;
+  /* line-height: 48rpx; */
   font-size: 30rpx;
-  color: #434343;
-  background-color: #ffefdf;
-  border-right: 1px #d9d9d9 solid;
+  color: #000;
+  padding-top:20rpx;
 }
 
 .active {
-  background-color: #f5901a;
+  color:white;
+  
 }
 
 .active text {
   color: #fff;
+  font-size: 38rpx;
 }
 
 .content {
@@ -81,21 +95,99 @@
 }
 
 .a-popular {
-  width: 750rpx;
+  width: 100%;
   height: auto;
   overflow: hidden;
 }
 
-.a-popular .b .item {
-  border-top: 1px solid #d9d9d9;
-  margin: 0 20rpx 4rpx 20rpx;
-  /* height: 266rpx; */
-  width: 712rpx;
-  overflow:hidden;
-  clear:both;
+.a-popular .b{
+  padding:10rpx 20rpx;
 }
 
-.a-popular .b .img {
+.a-popular .b .item {
+  border-top: 1rpx solid #d9d9d9;
+  /* margin: 0 20rpx 4rpx 20rpx; */
+  /* height: 266rpx; */
+  width: 100%;
+  height:270rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.a-popular .left{
+  display: flex;
+  width:240rpx;
+  /* border:1px solid red; */
+  height: 100%;
+}
+.a-popular .right{
+  display: flex;
+  flex:1;
+  height: 100%;
+  /* border:1px solid green; */
+}
+.a-popular .left navigator {
+  height: 100%;
+  width: 100%;
+}
+.a-popular .left .img{
+  width:100%;
+  height:100%;
+}
+.a-popular .right .text{
+  width:100%;
+  height: 100%;
+  position: relative;
+}
+.a-popular .right .text .name{
+  position: absolute;
+  top :25rpx;
+  left:10rpx;
+  font-size: 34rpx;
+}
+.a-popular .right .text .bref{
+  position: absolute;
+  top :100rpx;
+  left:10rpx;
+  font-size: 30rpx;
+}
+.a-popular .right .text .price{
+  color: #ff4900;
+position: absolute;
+bottom: 50rpx;
+left: 0rpx;
+font-size: 36rpx;
+
+}
+.a-popular .right .text .old-price{
+  color: #808080;
+position: absolute;
+bottom: 20rpx;
+left: 10rpx;
+font-size: 24rpx;
+text-decoration: line-through;
+
+}
+.a-popular .right .text .sell-skill{
+  color: #808080;
+position: absolute;
+bottom: 82rpx;
+right: 5rpx;
+font-size: 26rpx;
+
+}
+.a-popular .right .text .qianggou{
+  color: #fff;
+background-color: #de2f2f;
+position: absolute;
+bottom: 22rpx;
+right: 5rpx;
+font-size: 26rpx;
+width: 140rpx;
+border-radius: 6rpx;
+
+}
+/* .a-popular .b .img {
   margin-top: 12rpx;
   margin-right: 12rpx;
   float: left;
@@ -125,7 +217,7 @@
   line-height: 40rpx;
   word-break: break-all;
   -webkit-box-orient: vertical;
-  /* -webkit-line-clamp: 1; */
+  -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
@@ -157,7 +249,7 @@
   line-height: 50rpx;
   font-size: 40rpx;
   margin-top:5px;
-}
+} */
 
 .a-topic .b {
   height: 533rpx;
@@ -554,4 +646,13 @@
   top:157rpx;
   width: 55rpx;
   height:0rpx;
+}
+
+.time-bg{
+  display: inline-block;
+  background-color: #808080;
+  color: white;
+  border-radius: 3rpx;
+  margin:0rpx 2rpx;
+  padding:0rpx 2rpx;
 }

@@ -18,14 +18,14 @@
       <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" wx:for="{{goodsList}}" url="/pages/goods/goods?id={{iitem.product_id}}" wx:for-item="iitem" wx:for-index="iindex"  wx:key="goodsList">
         <view class="img-box">
           <image class="img" src="{{iitem.image}}" background-size="cover"></image>
-          <view class="fav-icon">
+          <!-- <view class="fav-icon">
                   <image src="/static/images/index-fav.png" mode="aspectFit"></image>
-                </view>
+                </view> -->
         </view>
         <text class="name">{{iitem.name}}</text>
         <view class="price-box">
         <text class="price">￥{{iitem.special_price?iitem.special_price.value:iitem.price.value}}</text>
-        <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image>
+        <!-- <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image> -->
         </view>
       </navigator>
     </view>
