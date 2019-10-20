@@ -23,6 +23,7 @@
                 </view> -->
         </view>
         <text class="name">{{iitem.name}}</text>
+        <view><text class="postage-tag">满388包邮</text></view>
         <view class="price-box">
         <text class="price">￥{{iitem.special_price?iitem.special_price.value:iitem.price.value}}</text>
         <!-- <image src="/static/images/cart-gray.png" class="cart-icon" mode="aspectFit"></image> -->

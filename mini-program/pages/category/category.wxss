@@ -149,7 +149,7 @@ page {
   /* padding: 24rpx 0 0rpx 0; */
   color: #808080;
   font-size: 24rpx;
-  padding: 12rpx 8rpx 0rpx 8rpx;
+  padding: 12rpx 18rpx 0rpx 18rpx;
   /* margin-left: 24rpx; */
   display: -webkit-box;
   text-overflow: ellipsis;
@@ -163,7 +163,7 @@ page {
 .cate-item .item .price {
   overflow: hidden;
   font-size: 28rpx;
-  padding: 10rpx 8rpx;
+  padding: 10rpx 18rpx;
   color: #ff4900;
 }
 
@@ -183,9 +183,16 @@ page {
   position: relative;
 }
 .price-box .cart-icon{
-  width:35rpx;
-  height: 35rpx;
+  width:60rpx;
+  height: 60rpx;
   position: absolute;
-  right: 10rpx;
+  right: 18rpx;
   top:8rpx;
+}
+.postage-tag{
+  color: #ffbf00;
+  border:1px solid #ffbf00;
+  border-radius: 6rpx;
+  display: inline-block;
+  padding:2rpx 4rpx;
 }

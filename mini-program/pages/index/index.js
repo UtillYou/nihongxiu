@@ -233,5 +233,56 @@ Page({
         });
       }
     });
-  }
+  },
+  downNotice:function(){
+    util.myalert('商品不存在或已经下架');
+  },
+  addCannelCollect: function(event) {
+    const id = event.target.dataset.id;
+    let that = this;
+    if (that.data.is_use == 0) {
+      that.downNotice();
+      return;
+    }
+    if (!wx.getStorageSync('access_token')) {
+      that.setData({
+        showLoginDialog: true
+      });
+      return;
+    }
+    
+    //添加或是取消收藏
+    util.request(api.CollectAddOrDelete, {
+        product_id: id
+      })
+      .then(function(res) {
+        // console.log(res);
+        if (res.code == 200) {
+          if (that.data.is_favorite == 0) {
+            that.setData({
+              'collectBackImage': that.data.hasCollectImage,
+              'is_favorite': 1
+            });
+            wx.showToast({
+              'title': '已放入心愿单',
+            })
+          } else {
+            that.setData({
+              'collectBackImage': that.data.noCollectImage,
+              'is_favorite': 0
+            });
+            wx.showToast({
+              'title': '已取消',
+            })
+          }
+
+        } else {
+          wx.showToast({
+            image: '/static/images/icon_error.png',
+            title: res.errmsg,
+            mask: true
+          });
+        }
+      });
+  },
 })
