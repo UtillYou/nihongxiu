@@ -40,7 +40,8 @@
     "pages/store/store",
     "pages/essay/essay",
     "pages/logistics/lLogistics",
-    "pages/onecategory/onecategory"
+    "pages/onecategory/onecategory",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "dark",

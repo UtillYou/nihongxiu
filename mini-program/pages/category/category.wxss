@@ -191,8 +191,12 @@ page {
 }
 .postage-tag{
   color: #ffbf00;
-  border:1px solid #ffbf00;
-  border-radius: 6rpx;
-  display: inline-block;
-  padding:2rpx 4rpx;
+border: 1px solid #ffbf00;
+border-radius: 3rpx;
+display: inline-block;
+padding: 1rpx 2rpx;
+font-size: 24rpx;
+margin-left: 14rpx;
+margin-top: 10rpx;
+
 }
